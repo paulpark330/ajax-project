@@ -53,6 +53,7 @@ table {
 
 img {
   width: 100%;
+  cursor: pointer;
 }
 
 @media (min-width: 813px) {
