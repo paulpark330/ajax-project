@@ -10,8 +10,17 @@
   justify-content: center;
 }
 
-.table-container {
+.logo-container {
+  margin-bottom: 2rem;
+  background-image: url("../images/triangle.png");
+  height: 109px;
+  font-family: "PT Serif", serif;
+}
 
+.logo-container h1 {
+  font-size: 3rem;
+  margin-top: 1rem;
+  letter-spacing: 1.4rem;
 }
 
 table {
@@ -26,5 +35,20 @@ table {
 
 img {
   width: 100%;
+}
 
+@media (min-width: 813px) {
+  .container {
+    width: 1152px;
+    margin: 0 auto;
+  }
+
+  .champ-img {
+    width: 10%;
+  }
+
+  .logo-container {
+    background-image: url("../images/triangle_big.png");
+    height: 117px;
+  }
 }

@@ -49,3 +49,14 @@ for (let i = 0; i < allChampions.length; i++) {
   div.appendChild(img);
   $championList.appendChild(div);
 }
+
+setTimeout(function () {
+  for (let i = 0; i < allChampions.length; i++) {
+    var img = document.createElement('img');
+    var div = document.createElement('div');
+    img.setAttribute('src', allChampions[i].image_url);
+    div.className = 'champ-img';
+    div.appendChild(img);
+    $championList.appendChild(div);
+  }
+}, 2000);
