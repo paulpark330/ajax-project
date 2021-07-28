@@ -14,34 +14,29 @@ var urlTwo =
 var urlEncodedTwo = encodeURIComponent(urlTwo);
 var finalUrlTwo = 'https://lfz-cors.herokuapp.com/?url=' + urlEncodedTwo;
 
-function getpageOne() {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', finalUrlOne);
-  xhr.responseType = 'json';
-  xhr.addEventListener('load', function () {
-    for (let i = 0; i < xhr.response.length; i++) {
-      allChampions.push(xhr.response[i]);
+function getAPI(finalUrlOne, finalUrlTwo) {
+  var xhr1 = new XMLHttpRequest();
+  xhr1.open('GET', finalUrlOne);
+  xhr1.responseType = 'json';
+  xhr1.addEventListener('load', function () {
+    for (let i = 0; i < xhr1.response.length; i++) {
+      allChampions.push(xhr1.response[i]);
     }
   });
+  xhr1.send();
 
-  xhr.send();
-}
-
-function getpageTwo() {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', finalUrlTwo);
-  xhr.responseType = 'json';
-  xhr.addEventListener('load', function () {
-    for (let i = 0; i < xhr.response.length; i++) {
-      allChampions.push(xhr.response[i]);
+  var xhr2 = new XMLHttpRequest();
+  xhr2.open('GET', finalUrlTwo);
+  xhr2.responseType = 'json';
+  xhr2.addEventListener('load', function () {
+    for (let i = 0; i < xhr2.response.length; i++) {
+      allChampions.push(xhr2.response[i]);
     }
   });
-
-  xhr.send();
+  xhr2.send();
 }
 
-getpageOne();
-getpageTwo();
+getAPI(finalUrlOne, finalUrlTwo);
 
 function renderChamps() {
   var alphChamps = allChampions.sort((a, b) => (a.name > b.name ? 1 : -1));
