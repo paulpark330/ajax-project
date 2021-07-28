@@ -10,6 +10,10 @@
   justify-content: center;
 }
 
+.hidden {
+  display: none;
+}
+
 .logo-container {
   margin-bottom: 2rem;
   background-image: url("../images/triangle.png");
@@ -31,6 +35,20 @@ table {
   width: 30%;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
+}
+
+.get-started {
+  font-family: "PT Serif", serif;
+  font-size: 2rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 5px 5px 5px black;
+  margin-top: 3rem;
+}
+
+.get-started:active {
+  position: relative;
+  top: 2px;
 }
 
 img {

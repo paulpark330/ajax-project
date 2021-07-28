@@ -1,4 +1,6 @@
 var $championList = document.querySelector('#champion-list');
+var $start = document.querySelector('.get-started');
+var $intro = document.querySelector('.intro');
 
 var allChampions = [];
 
@@ -41,22 +43,18 @@ function getpageTwo() {
 getpageOne();
 getpageTwo();
 
-for (let i = 0; i < allChampions.length; i++) {
-  var img = document.createElement('img');
-  var div = document.createElement('div');
-  img.setAttribute('src', allChampions[i].image_url);
-  div.className = 'champ-img';
-  div.appendChild(img);
-  $championList.appendChild(div);
-}
-
-setTimeout(function () {
-  for (let i = 0; i < allChampions.length; i++) {
+function renderChamps() {
+  var alphChamps = allChampions.sort((a, b) => (a.name > b.name ? 1 : -1));
+  for (let i = 0; i < alphChamps.length; i++) {
     var img = document.createElement('img');
     var div = document.createElement('div');
-    img.setAttribute('src', allChampions[i].image_url);
+    img.setAttribute('src', alphChamps[i].image_url);
     div.className = 'champ-img';
     div.appendChild(img);
     $championList.appendChild(div);
   }
-}, 2000);
+  $start.className = 'get-started hidden';
+  $intro.className = 'intro hidden';
+}
+
+$start.addEventListener('click', renderChamps);
