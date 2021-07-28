@@ -1,0 +1,73 @@
+.row {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.logo-container {
+  margin-bottom: 2rem;
+  background-image: url("../images/triangle.png");
+  height: 109px;
+  font-family: "PT Serif", serif;
+}
+
+.logo-container h1 {
+  font-size: 3rem;
+  margin-top: 1rem;
+  letter-spacing: 1.4rem;
+}
+
+table {
+  width: 300px;
+}
+
+.champ-img {
+  width: 30%;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+}
+
+.get-started {
+  font-family: "PT Serif", serif;
+  font-size: 2rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 5px 5px 5px black;
+  margin-top: 3rem;
+}
+
+.get-started:active {
+  position: relative;
+  top: 2px;
+}
+
+img {
+  width: 100%;
+  cursor: pointer;
+}
+
+@media (min-width: 813px) {
+  .container {
+    width: 1152px;
+    margin: 0 auto;
+  }
+
+  .champ-img {
+    width: 10%;
+  }
+
+  .logo-container {
+    background-image: url("../images/triangle_big.png");
+    height: 117px;
+  }
+}
