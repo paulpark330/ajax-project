@@ -1,7 +1,8 @@
 var $championList = document.querySelector('#champion-list');
 var $start = document.querySelector('.get-started');
 var $intro = document.querySelector('.intro');
-
+var $search = document.querySelector('.search');
+var $champImg = [];
 var allChampions = [];
 
 function getAPI(url) {
@@ -32,11 +33,28 @@ function renderChamps() {
     var div = document.createElement('div');
     img.setAttribute('src', alphChamps[i].image_url);
     div.className = 'champ-img';
+    div.setAttribute('champ-name', alphChamps[i].name.toLowerCase());
     div.appendChild(img);
     $championList.appendChild(div);
   }
   $start.className = 'get-started hidden';
   $intro.className = 'intro hidden';
+  $search.className = 'search';
+  $champImg = document.querySelectorAll('.champ-img');
 }
 
 $start.addEventListener('click', renderChamps);
+
+$search.addEventListener('input', searchChamps);
+
+function searchChamps(event) {
+
+  for (let i = 0; i < $champImg.length; i++) {
+    var searchString = $search.value.toLowerCase();
+    if ($champImg[i].getAttribute('champ-name').includes(searchString)) {
+      $champImg[i].className = 'champ-img';
+    } else {
+      $champImg[i].className = 'champ-img hidden';
+    }
+  }
+}

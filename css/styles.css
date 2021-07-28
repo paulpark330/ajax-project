@@ -31,10 +31,6 @@
   letter-spacing: 1.4rem;
 }
 
-table {
-  width: 300px;
-}
-
 .champ-img {
   width: 30%;
   margin-left: 0.2rem;
@@ -55,7 +51,7 @@ table {
   top: 2px;
 }
 
-#search-bar {
+.search {
   margin: 0 0 2rem 0;
   width: 15rem;
   height: 2rem;
