@@ -5,10 +5,10 @@ var $intro = document.querySelector('.intro');
 var allChampions = [];
 
 function getAPI(url) {
-  var urlEncodedOne = encodeURIComponent(url);
-  var finalUrlOne = 'https://lfz-cors.herokuapp.com/?url=' + urlEncodedOne;
+  var urlEncoded = encodeURIComponent(url);
+  var finalUrl = 'https://lfz-cors.herokuapp.com/?url=' + urlEncoded;
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', finalUrlOne);
+  xhr.open('GET', finalUrl);
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     for (let i = 0; i < xhr.response.length; i++) {
