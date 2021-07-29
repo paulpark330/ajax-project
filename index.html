@@ -41,18 +41,26 @@
           <button class="get-started">GET STARTED</button>
         </div>
         <div class="row justify-center">
-          <input class="search hidden" type="text" name="" id="search-bar" placeholder="Search">
+          <input
+            class="search hidden"
+            type="text"
+            name=""
+            id="search-bar"
+            placeholder="Search"
+          />
         </div>
-        <div class="champion-container">
+        <div class="champion-container" data-view="champion">
           <div id="champion-list" class="row justify-center wrap"></div>
+        </div>
+        <div class="comparison-container hidden" data-view="comparison">
+          <div class="comparison-list row justify-center">
+          </div>
         </div>
       </main>
       <footer>
-        <div class="footer">
-          <div class="row justify-evenly align-center">
-            <img src="images/home.png" alt="">
-            <img src="images/compare.png" alt="">
-          </div>
+        <div class="nav-foot footer row justify-evenly align-center">
+          <img class="icon" src="images/home.png" alt="" data-view="champion"/>
+          <img class="icon" src="images/compare.png" alt="" data-view="comparison"/>
         </div>
       </footer>
     </div>

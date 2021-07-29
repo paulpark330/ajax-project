@@ -78,17 +78,19 @@ img {
   width: 100%;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.2s ease;
+}
+
 .champ-img:hover .overlay {
   opacity: 1;
   cursor: pointer;
-}
-
-.overlay{
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  opacity: 0;
-  transition: 0.2s ease;
 }
 
 .footer {
@@ -100,9 +102,32 @@ img {
 }
 
 .footer img {
-  width: 10%;
+  width: 2rem;
+  cursor: pointer;
 }
 
+.comp-img {
+  position: relative;
+  margin: 0.4rem;
+}
+
+.comp-img img {
+  width: 100%;
+}
+
+.overlay-remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  opacity: 0;
+  width: 20%;
+  transition: 0.2s ease;
+}
+
+.comp-img:hover .overlay-remove {
+  opacity: 1;
+  cursor: pointer;
+}
 
 @media (min-width: 813px) {
   .container {
@@ -112,11 +137,14 @@ img {
 
   .champ-img {
     width: 10%;
-
   }
 
   .logo-container {
     background-image: url("../images/triangle_big.png");
     height: 117px;
+  }
+
+  .footer {
+    width: 1152px;
   }
 }
