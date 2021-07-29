@@ -31,10 +31,17 @@ function renderChamps() {
   for (let i = 0; i < alphChamps.length; i++) {
     var img = document.createElement('img');
     var div = document.createElement('div');
+    var overlay = document.createElement('div');
+    var plus = document.createElement('img');
     img.setAttribute('src', alphChamps[i].image_url);
     div.className = 'champ-img';
+    overlay.className = 'overlay';
     div.setAttribute('champ-name', alphChamps[i].name.toLowerCase());
+    plus.setAttribute('src', '../images/Plus.png');
+    plus.className = 'plus';
     div.appendChild(img);
+    div.appendChild(overlay);
+    overlay.appendChild(plus);
     $championList.appendChild(div);
   }
   $start.className = 'get-started hidden';
