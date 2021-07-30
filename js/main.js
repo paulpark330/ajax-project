@@ -7,6 +7,7 @@ var $navFoot = document.querySelector('.nav-foot');
 var $championContainer = document.querySelector('.champion-container');
 var $comparisonContainer = document.querySelector('.comparison-container');
 
+var $compImg = [];
 var $champImg = [];
 var allChampions = [];
 
@@ -59,6 +60,7 @@ function comparisonDOMTree(champion) {
   div.appendChild(img);
   overlay.className = 'overlay-remove';
   remove.setAttribute('src', 'images/remove.png');
+  remove.className = 'remove-icon';
   overlay.appendChild(remove);
   div.appendChild(overlay);
   return div;
@@ -93,6 +95,16 @@ function addChamps(event) {
       $comparisonList.appendChild(comparisonDOMTree(allChampions[i]));
     }
   }
+  $compImg = document.querySelectorAll('.comp-img');
+}
+
+function removeChamps(event) {
+  var target = event.target.getAttribute('class');
+  if (target === 'remove-icon') {
+    for (let i = 0; i < $compImg.length; i++) {
+      console.log('delete');
+    }
+  }
 }
 
 function switchView(event) {
@@ -116,3 +128,5 @@ $search.addEventListener('input', searchChamps);
 $championList.addEventListener('click', addChamps);
 
 $navFoot.addEventListener('click', switchView);
+
+$comparisonList.addEventListener('click', removeChamps);
