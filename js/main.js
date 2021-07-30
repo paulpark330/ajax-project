@@ -61,6 +61,7 @@ function comparisonDOMTree(champion) {
   overlay.className = 'overlay-remove';
   remove.setAttribute('src', 'images/remove.png');
   remove.className = 'remove-icon';
+  remove.setAttribute('champ-name', champion.name.toLowerCase());
   overlay.appendChild(remove);
   div.appendChild(overlay);
   return div;
@@ -99,10 +100,10 @@ function addChamps(event) {
 }
 
 function removeChamps(event) {
-  var target = event.target.getAttribute('class');
-  if (target === 'remove-icon') {
-    for (let i = 0; i < $compImg.length; i++) {
-      console.log('delete');
+  var target = event.target.getAttribute('champ-name');
+  for (let i = 0; i < $compImg.length; i++) {
+    if (target === $compImg[i].getAttribute('champ-name')) {
+      $compImg[i].remove();
     }
   }
 }
