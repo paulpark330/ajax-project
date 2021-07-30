@@ -31,16 +31,15 @@ getAPI(
   'https://api.pandascore.co/lol/champions?token=_g8je6_IZ8WrEPjlCgB-PG2588hD3Ume9yISokmfKl3uP-h5gGc&page[size]=100&page[number]=2'
 );
 
-function championDOMTree(i) {
-  var alphChamps = allChampions.sort((a, b) => (a.name > b.name ? 1 : -1));
+function championDOMTree(champion) {
   var img = document.createElement('img');
   var div = document.createElement('div');
   var overlay = document.createElement('div');
   var plus = document.createElement('img');
-  img.setAttribute('src', alphChamps[i].image_url);
+  img.setAttribute('src', champion.image_url);
   div.className = 'champ-img';
   overlay.className = 'overlay';
-  div.setAttribute('champ-name', alphChamps[i].name.toLowerCase());
+  div.setAttribute('champ-name', champion.name.toLowerCase());
   plus.setAttribute('src', 'images/plus.png');
   plus.className = 'plus';
   div.appendChild(img);
@@ -49,14 +48,14 @@ function championDOMTree(i) {
   return div;
 }
 
-function comparisonDOMTree(i) {
+function comparisonDOMTree(champion) {
   var img = document.createElement('img');
   var div = document.createElement('div');
   var overlay = document.createElement('div');
   var remove = document.createElement('img');
-  img.setAttribute('src', allChampions[i].big_image_url);
+  img.setAttribute('src', champion.big_image_url);
   div.className = 'comp-img';
-  div.setAttribute('champ-name', allChampions[i].name.toLowerCase());
+  div.setAttribute('champ-name', champion.name.toLowerCase());
   div.appendChild(img);
   overlay.className = 'overlay-remove';
   remove.setAttribute('src', 'images/remove.png');
@@ -66,9 +65,9 @@ function comparisonDOMTree(i) {
 }
 
 function renderChamps() {
-  for (let i = 0; i < allChampions.length; i++) {
-    $championList.appendChild(championDOMTree(i));
-
+  var alphChamps = allChampions.sort((a, b) => (a.name > b.name ? 1 : -1));
+  for (let i = 0; i < alphChamps.length; i++) {
+    $championList.appendChild(championDOMTree(alphChamps[i]));
   }
   $start.className = 'get-started hidden';
   $intro.className = 'intro hidden';
@@ -91,7 +90,7 @@ function addChamps(event) {
   var target = event.target.parentNode.parentNode.getAttribute('champ-name');
   for (let i = 0; i < allChampions.length; i++) {
     if (target === allChampions[i].name.toLowerCase()) {
-      $comparisonList.appendChild(comparisonDOMTree(i));
+      $comparisonList.appendChild(comparisonDOMTree(allChampions[i]));
     }
   }
 }
