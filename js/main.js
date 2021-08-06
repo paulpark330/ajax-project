@@ -70,6 +70,17 @@ function comparisonDOMTree(champion) {
   return div;
 }
 
+function renderChamps() {
+  var alphChamps = allChampions.sort((a, b) => (a.name > b.name ? 1 : -1));
+  for (let i = 0; i < alphChamps.length; i++) {
+    $championList.appendChild(championDOMTree(alphChamps[i]));
+  }
+  $start.className = 'get-started hidden';
+  $intro.className = 'intro hidden';
+  $search.className = 'search';
+  $champImg = document.querySelectorAll('.champ-img');
+}
+
 function renderSelect() {
   var level = document.createElement('div');
   var select = document.createElement('select');
@@ -150,15 +161,8 @@ function renderSelect() {
   return level;
 }
 
-function renderChamps() {
-  var alphChamps = allChampions.sort((a, b) => (a.name > b.name ? 1 : -1));
-  for (let i = 0; i < alphChamps.length; i++) {
-    $championList.appendChild(championDOMTree(alphChamps[i]));
-  }
-  $start.className = 'get-started hidden';
-  $intro.className = 'intro hidden';
-  $search.className = 'search';
-  $champImg = document.querySelectorAll('.champ-img');
+function renderStats() {
+  console.log('hi');
 }
 
 function searchChamps(event) {

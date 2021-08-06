@@ -109,10 +109,7 @@ img {
 .comp-img {
   position: relative;
   margin: 0.4rem;
-}
-
-.comp-img img {
-  width: 100%;
+  width: 40%;
 }
 
 .overlay-remove {
@@ -143,6 +140,10 @@ img {
     background-image: url("../images/triangle_big.png");
     height: 117px;
   }
+
+  .comp-img {
+  width: 15%;
+}
 
   .footer {
     width: 1152px;
