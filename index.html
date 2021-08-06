@@ -25,16 +25,15 @@
       <main>
         <div class="row justify-center">
           <p class="intro">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            ipsam quia commodi harum ducimus, suscipit hic quidem, maxime nobis
-            consectetur, culpa cum dolorum cumque quod obcaecati. Optio quidem
-            numquam molestias. Aspernatur provident amet magnam corporis
-            repudiandae at odit? Illum, non dicta ab expedita eligendi
-            accusantium fugit eum nesciunt totam aut, ipsum officiis temporibus
-            consectetur architecto quis rem odit corrupti. Consequatur. Quisquam
-            similique ipsa fuga non eos amet eius totam earum sint placeat. Sit
-            aspernatur odio vero eaque quaerat dicta ipsum et, reprehenderit
-            commodi dolores culpa cumque distinctio magni autem cupiditate?
+            Welcome to Champs!
+            <br />
+            Champs is a web application where you can look up base status for
+            your favorite champions.
+            <br />
+            Click on the champions to add them to the comparison list. Then,
+            click on the list icon to view the comparisons!
+            <br />
+            More features coming soon!
           </p>
         </div>
         <div class="row justify-center">
@@ -54,13 +53,42 @@
         </div>
         <div class="comparison-container hidden" data-view="comparison">
           <div class="comparison-list row justify-center">
+            <div class="comp-img" champ-name="bard">
+              <img
+                src="https://cdn.pandascore.co/images/lol/champion/big_image/d30594b77785e3bea3a984e10e9039cf.jpg"
+              />
+              <div class="overlay-remove">
+                <img
+                  src="images/remove.png"
+                  class="remove-icon"
+                  champ-name="bard"
+                />
+              </div>
+            </div>
+            <div class="comp-img" champ-name="bard">
+              <img
+                src="https://cdn.pandascore.co/images/lol/champion/big_image/d30594b77785e3bea3a984e10e9039cf.jpg"
+              />
+              <div class="overlay-remove">
+                <img
+                  src="images/remove.png"
+                  class="remove-icon"
+                  champ-name="bard"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </main>
       <footer>
         <div class="nav-foot footer row justify-evenly align-center">
-          <img class="icon" src="images/home.png" alt="" data-view="champion"/>
-          <img class="icon" src="images/compare.png" alt="" data-view="comparison"/>
+          <img class="icon" src="images/home.png" alt="" data-view="champion" />
+          <img
+            class="icon"
+            src="images/compare.png"
+            alt=""
+            data-view="comparison"
+          />
         </div>
       </footer>
     </div>

@@ -52,12 +52,15 @@ function championDOMTree(champion) {
 function comparisonDOMTree(champion) {
   var img = document.createElement('img');
   var div = document.createElement('div');
+
   var overlay = document.createElement('div');
   var remove = document.createElement('img');
   img.setAttribute('src', champion.big_image_url);
   div.className = 'comp-img';
+
   div.setAttribute('champ-name', champion.name.toLowerCase());
   div.appendChild(img);
+  div.appendChild(renderSelect());
   overlay.className = 'overlay-remove';
   remove.setAttribute('src', 'images/remove.png');
   remove.className = 'remove-icon';
@@ -65,6 +68,86 @@ function comparisonDOMTree(champion) {
   overlay.appendChild(remove);
   div.appendChild(overlay);
   return div;
+}
+
+function renderSelect() {
+  var level = document.createElement('div');
+  var select = document.createElement('select');
+  var level1 = document.createElement('option');
+  var level2 = document.createElement('option');
+  var level3 = document.createElement('option');
+  var level4 = document.createElement('option');
+  var level5 = document.createElement('option');
+  var level6 = document.createElement('option');
+  var level7 = document.createElement('option');
+  var level8 = document.createElement('option');
+  var level9 = document.createElement('option');
+  var level10 = document.createElement('option');
+  var level11 = document.createElement('option');
+  var level12 = document.createElement('option');
+  var level13 = document.createElement('option');
+  var level14 = document.createElement('option');
+  var level15 = document.createElement('option');
+  var level16 = document.createElement('option');
+  var level17 = document.createElement('option');
+  var level18 = document.createElement('option');
+  level.className = 'level';
+  level1.setAttribute('value', 'level1');
+  level2.setAttribute('value', 'level2');
+  level3.setAttribute('value', 'level3');
+  level4.setAttribute('value', 'level4');
+  level5.setAttribute('value', 'level5');
+  level6.setAttribute('value', 'level6');
+  level7.setAttribute('value', 'level7');
+  level8.setAttribute('value', 'level8');
+  level9.setAttribute('value', 'level9');
+  level10.setAttribute('value', 'level10');
+  level11.setAttribute('value', 'level11');
+  level12.setAttribute('value', 'level12');
+  level13.setAttribute('value', 'level13');
+  level14.setAttribute('value', 'level14');
+  level15.setAttribute('value', 'level15');
+  level16.setAttribute('value', 'level16');
+  level17.setAttribute('value', 'level17');
+  level18.setAttribute('value', 'level18');
+  level1.textContent = 'Level 1';
+  level2.textContent = 'Level 2';
+  level3.textContent = 'Level 3';
+  level4.textContent = 'Level 4';
+  level5.textContent = 'Level 5';
+  level6.textContent = 'Level 6';
+  level7.textContent = 'Level 7';
+  level8.textContent = 'Level 8';
+  level9.textContent = 'Level 9';
+  level10.textContent = 'Level 10';
+  level11.textContent = 'Level 11';
+  level12.textContent = 'Level 12';
+  level13.textContent = 'Level 13';
+  level14.textContent = 'Level 14';
+  level15.textContent = 'Level 15';
+  level16.textContent = 'Level 16';
+  level17.textContent = 'Level 17';
+  level18.textContent = 'Level 18';
+  level.appendChild(select);
+  select.appendChild(level1);
+  select.appendChild(level2);
+  select.appendChild(level3);
+  select.appendChild(level4);
+  select.appendChild(level5);
+  select.appendChild(level6);
+  select.appendChild(level7);
+  select.appendChild(level8);
+  select.appendChild(level9);
+  select.appendChild(level10);
+  select.appendChild(level11);
+  select.appendChild(level12);
+  select.appendChild(level13);
+  select.appendChild(level14);
+  select.appendChild(level15);
+  select.appendChild(level16);
+  select.appendChild(level17);
+  select.appendChild(level18);
+  return level;
 }
 
 function renderChamps() {
