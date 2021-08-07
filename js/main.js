@@ -161,7 +161,7 @@ function renderSelect() {
   return level;
 }
 
-function renderStats() {
+function renderStats(champion) {
   console.log('hi');
 }
 
